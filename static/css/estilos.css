@@ -1,0 +1,174 @@
+/* ==========================
+   Estilos generales para toda la app
+   ========================== */
+
+/* Reset básico de márgenes y paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Color de fondo general de la página */
+body {
+    background-color: #fdf6ec;
+    /* color crema suave */
+    color: #4b3f2f;
+    /* color café oscuro para texto */
+}
+
+/* ==========================
+   Navbar
+   ========================== */
+.navbar {
+    background-color: #a67c52;
+    /* café medio */
+}
+
+.navbar .navbar-brand {
+    color: #fff;
+    /* texto blanco para resaltar */
+    font-weight: bold;
+}
+
+.navbar .nav-link {
+    color: #fff;
+    /* enlaces blancos */
+}
+
+.navbar .nav-link.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* ==========================
+   Contenedores principales
+   ========================== */
+.container {
+    padding: 2rem;
+}
+
+/* ==========================
+   Títulos y encabezados
+   ========================== */
+h1,
+h2,
+h3,
+h4 {
+    color: #4b3f2f;
+    /* color café oscuro */
+    margin-bottom: 1rem;
+}
+
+/* ==========================
+   Formularios
+   ========================== */
+input,
+textarea,
+select,
+button {
+    border-radius: 5px;
+    border: 1px solid #d3bfa5;
+    /* borde café claro */
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #a67c52;
+    /* resaltar en café medio */
+    box-shadow: 0 0 5px rgba(166, 124, 82, 0.5);
+}
+
+button {
+    background-color: #a67c52;
+    /* color café medio */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #8c6239;
+    /* café más oscuro al pasar mouse */
+}
+
+/* ==========================
+   Mensajes flotantes (alerts)
+   ========================== */
+.alert {
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.alert-success {
+    background-color: #dff0d8;
+    /* verde suave para éxito */
+    color: #3c763d;
+}
+
+.alert-danger {
+    background-color: #f2dede;
+    /* rojo suave para error */
+    color: #a94442;
+}
+
+.alert-info {
+    background-color: #fcf8e3;
+    /* amarillo crema para info */
+    color: #8a6d3b;
+}
+
+/* ==========================
+   Tablas
+   ========================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+th,
+td {
+    border: 1px solid #d3bfa5;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+th {
+    background-color: #a67c52;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f7eee3;
+    /* crema claro para filas pares */
+}
+
+/* ==========================
+   Cards / Contenedores de información
+   ========================== */
+.card {
+    background-color: #fdf6ec;
+    border: 1px solid #d3bfa5;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================
+   Footer (si es que hay)
+   ========================== */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #a67c52;
+    color: #fff;
+    margin-top: 2rem;
+}

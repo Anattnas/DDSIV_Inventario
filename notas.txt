@@ -1,0 +1,9 @@
+Contenido de la tabla 'usuarios':
+(1, 'almacen1', '123456', 'almacen')
+(2, 'productor1', '123456', 'productor')
+
+Asegurate de estar en tu entorno virtual y luego ejecuta:
+python login.py
+
+Luego ingresa en el navegador a:
+http://127.0.0.1:5000/
