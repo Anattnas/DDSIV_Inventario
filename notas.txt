@@ -1,3 +1,5 @@
+cd "C:\Users\Anatnas\Documents\DDSIV Python\DDSIV\Roles"
+
 Contenido de la tabla 'usuarios':
 (1, 'almacen1', '123456', 'almacen')
 (2, 'productor1', '123456', 'productor')
