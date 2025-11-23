@@ -1,174 +1,233 @@
-/* ==========================
-   Estilos generales para toda la app
-   ========================== */
+/* ========================== */
+/* 🎨 CONFIGURACIÓN GLOBAL   */
+/* ========================== */
 
-/* Reset básico de márgenes y paddings */
 * {
     margin: 0;
+    /* elimina márgenes por defecto */
     padding: 0;
+    /* elimina padding por defecto */
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    /* asegura que width incluya borde */
+    font-family: 'Segoe UI', sans-serif;
+    /* fuente oficial UNISON */
 }
 
-/* Color de fondo general de la página */
 body {
-    background-color: #fdf6ec;
-    /* color crema suave */
-    color: #4b3f2f;
-    /* color café oscuro para texto */
+    background-color: #ffffff;
+    /* fondo blanco limpio */
+    color: #015294;
+    /* texto azul oscuro UNISON */
 }
 
-/* ==========================
-   Navbar
-   ========================== */
+/* ========================== */
+/* 🔹 PALETA DE COLORES BASE */
+/* ========================== */
+
+/* -- NO se aplican a nada directamente, son referencia --
+Azul Unison: #00529e
+Azul Oscuro Unison: #015294
+Dorado Unison: #f8bb00
+Dorado Oscuro Unison: #d99e30
+*/
+
+/* ========================== */
+/* 🔵 NAVBAR */
+/* ========================== */
+
 .navbar {
-    background-color: #a67c52;
-    /* café medio */
+    background-color: #00529e;
+    /* azul UNISON */
 }
 
 .navbar .navbar-brand {
-    color: #fff;
-    /* texto blanco para resaltar */
+    color: #ffffff;
+    /* texto blanco */
     font-weight: bold;
+    /* resalta nombre */
 }
 
 .navbar .nav-link {
-    color: #fff;
+    color: #ffffff;
     /* enlaces blancos */
 }
 
 .navbar .nav-link.active {
     font-weight: bold;
+    /* resalta link activo */
     text-decoration: underline;
+    /* subraya link activo */
 }
 
-/* ==========================
-   Contenedores principales
-   ========================== */
+/* ========================== */
+/* 📦 CONTENEDORES */
+/* ========================== */
+
 .container {
     padding: 2rem;
+    /* separación interna */
 }
 
-/* ==========================
-   Títulos y encabezados
-   ========================== */
+/* ========================== */
+/* 🔠 ENCABEZADOS */
+/* ========================== */
+
 h1,
 h2,
 h3,
 h4 {
-    color: #4b3f2f;
-    /* color café oscuro */
+    color: #00529e;
+    /* azul UNISON para títulos */
     margin-bottom: 1rem;
+    /* separación inferior */
 }
 
-/* ==========================
-   Formularios
-   ========================== */
+/* ========================== */
+/* 📝 FORMULARIOS */
+/* ========================== */
+
 input,
 textarea,
 select,
 button {
-    border-radius: 5px;
-    border: 1px solid #d3bfa5;
-    /* borde café claro */
+    border-radius: 4px;
+    /* borde redondeado 4px requerido */
+    border: 1px solid #d99e30;
+    /* dorado oscuro */
     padding: 0.5rem;
+    /* espacio interno */
     font-size: 1rem;
+    /* tamaño estándar */
 }
 
 input:focus,
 textarea:focus,
 select:focus {
     outline: none;
-    border-color: #a67c52;
-    /* resaltar en café medio */
-    box-shadow: 0 0 5px rgba(166, 124, 82, 0.5);
+    /* quita borde azul default */
+    border-color: #f8bb00;
+    /* para contraste dorado */
+    box-shadow: 0 0 5px rgba(248, 187, 0, 0.5);
+    /* glow dorado */
 }
 
 button {
-    background-color: #a67c52;
-    /* color café medio */
-    color: #fff;
+    background-color: #f8bb00;
+    /* dorado principal */
+    color: #015294;
+    /* contraste azul oscuro */
     border: none;
+    /* sin borde predeterminado */
     cursor: pointer;
+    /* indica que es clickeable */
     transition: background-color 0.3s ease;
+    /* transición suave */
 }
 
 button:hover {
-    background-color: #8c6239;
-    /* café más oscuro al pasar mouse */
+    background-color: #d99e30;
+    /* dorado oscuro al hover */
 }
 
-/* ==========================
-   Mensajes flotantes (alerts)
-   ========================== */
+/* ========================== */
+/* ⚠ MENSAJES (ALERTS) */
+/* ========================== */
+
 .alert {
-    border-radius: 5px;
+    border-radius: 4px;
+    /* bordes redondeados */
     font-weight: bold;
+    /* énfasis visual */
 }
 
 .alert-success {
     background-color: #dff0d8;
-    /* verde suave para éxito */
+    /* fondo verde suave */
     color: #3c763d;
+    /* texto verde */
 }
 
 .alert-danger {
     background-color: #f2dede;
-    /* rojo suave para error */
+    /* fondo rojo suave */
     color: #a94442;
+    /* texto rojo */
 }
 
 .alert-info {
     background-color: #fcf8e3;
-    /* amarillo crema para info */
-    color: #8a6d3b;
+    /* fondo crema */
+    color: #015294;
+    /* texto azul oscuro UNISON */
 }
 
-/* ==========================
-   Tablas
-   ========================== */
+/* ========================== */
+/* 📊 TABLAS */
+/* ========================== */
+
 table {
     width: 100%;
+    /* tabla ocupa todo el ancho */
     border-collapse: collapse;
+    /* elimina doble borde */
     margin-bottom: 2rem;
+    /* separación inferior */
 }
 
 th,
 td {
-    border: 1px solid #d3bfa5;
+    border: 1px solid #d99e30;
+    /* líneas dorado oscuro */
     padding: 0.5rem;
+    /* separación interna */
     text-align: left;
+    /* alineación izquierda */
 }
 
 th {
-    background-color: #a67c52;
-    color: #fff;
+    background-color: #00529e;
+    /* encabezado azul UNISON */
+    color: #ffffff;
+    /* texto blanco */
 }
 
 tr:nth-child(even) {
-    background-color: #f7eee3;
-    /* crema claro para filas pares */
+    background-color: #e8f0fb;
+    /* azul MUY claro para filas pares */
 }
 
-/* ==========================
-   Cards / Contenedores de información
-   ========================== */
+/* ========================== */
+/* 🃏 CARDS */
+/* ========================== */
+
 .card {
-    background-color: #fdf6ec;
-    border: 1px solid #d3bfa5;
+    background-color: #ffffff;
+    /* fondo blanco minimalista */
+    border: 1px solid #d99e30;
+    /* borde dorado oscuro */
     border-radius: 8px;
+    /* borde suave */
     padding: 1rem;
+    /* separación interna */
     margin-bottom: 1rem;
+    /* separación inferior */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* sombra ligera */
 }
 
-/* ==========================
-   Footer (si es que hay)
-   ========================== */
+/* ========================== */
+/* 🔻 FOOTER */
+/* ========================== */
+
 footer {
     text-align: center;
+    /* centra texto */
     padding: 1rem;
-    background-color: #a67c52;
-    color: #fff;
+    /* espacio interno */
+    background-color: #015294;
+    /* azul oscuro UNISON */
+    color: #ffffff;
+    /* texto blanco */
     margin-top: 2rem;
+    /* separación con contenido */
 }
