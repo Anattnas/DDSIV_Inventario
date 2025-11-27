@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - InventarioMX</title>
+
+    <!-- Bootstrap CSS desde CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Estilos personalizados: ahora invmx.css con colores oficiales Unison -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/invmx.css') }}">
+</head>
+
+<body>
+
+    <!-- ===============================
+         Mensaje flotante de conexión
+         =============================== -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, msg in messages %}
+    <div id="mensaje-flotante"
+        class="alert alert-{{ category }} alert-dismissible fade show position-fixed top-0 end-0 m-3" role="alert"
+        style="z-index: 1050;">
+        {{ msg }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <!-- ===============================
+         Barra de navegación
+         =============================== -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--azul-unison);">
+        <div class="container-fluid">
+
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='img/unison_logo.png') }}" alt="Logo" width="40" height="40"
+                    class="d-inline-block align-text-top me-2">
+                InventarioMX
+            </a>
+
+            <!-- Botón para colapsar menú en móviles -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú dinámico según cargo -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <!-- Opción Inicio siempre visible -->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{ url_for('login') }}">Salir</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('vista_almacenes') }}">Almacén</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('vista_productos') }}">Productos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===============================
+         Contenido principal
+         =============================== -->
+    <div class="container d-flex flex-column justify-content-center align-items-center mt-5">
+        <!-- Logo centrado grande -->
+        <img src="{{ url_for('static', filename='img/unison_logo.png') }}" alt="Logo" class="mb-4"
+            style="width:120px;height:120px;">
+
+        <!-- Card de información debajo del logo -->
+        <div class="card p-4 text-center" style="max-width: 600px;">
+            <!-- Bienvenida -->
+            <h2>Bienvenido, {{ usuario }}</h2>
+            <p>Cargo: <strong>{{ cargo }}</strong></p>
+
+            <!-- Información de la aplicación -->
+            <hr>
+            <h4>InventarioMX</h4>
+            <p>Aplicación desarrollada por: <strong>Jose Jesus Valdez Santana</strong></p>
+            <p>Use la barra de navegación para acceder a las diferentes vistas disponibles según su rol.</p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle desde CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script para ocultar mensaje flotante después de 4 segundos -->
+    <script>
+        setTimeout(function () {
+            const mensaje = document.getElementById('mensaje-flotante');
+            if (mensaje) {
+                mensaje.classList.remove('show'); // Quitamos clase show
+                mensaje.classList.add('hide');    // Agregamos clase hide para animación
+            }
+        }, 4000);
+    </script>
+
+</body>
+
+</html>

@@ -1,8 +1,9 @@
 cd "C:\Users\Anatnas\Documents\DDSIV Python\DDSIV\Roles"
 
-Contenido de la tabla 'usuarios':
-(1, 'almacen1', '123456', 'almacen')
-(2, 'productor1', '123456', 'productor')
+usuarios
+ADMIN            admin23
+PRODUCTOS        productos19
+ALMACENES        almacenes11
 
 Asegurate de estar en tu entorno virtual y luego ejecuta:
 python login.py

@@ -10,15 +10,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Estilos personalizados -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/invmx.css') }}">
+
 </head>
 
-<body class="bg-light">
+<body>
 
     <!-- NavBar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ url_for('login') }}">Inicio</a>
+            <a class="navbar-brand" href="{{ url_for('home') }}">Atras</a>
         </div>
     </nav>
 
@@ -27,7 +28,6 @@
         <!-- Último usuario y última modificación -->
         <div class="mb-2 text-start text-muted small">
             Último usuario en ingresar: {{ ultimo_usuario }} <br>
-            Última actividad: {{ ultima_modificacion }}
         </div>
 
         <h1 class="mb-4 text-center">Lista de Almacenes</h1>
@@ -46,9 +46,33 @@
         {% endwith %}
 
         <!-- Botón Crear nuevo almacen -->
+        {% if cargo == 'ADMIN' or cargo == 'ALMACENES' %}
         <div class="mb-4 text-end">
             <a href="{{ url_for('crear_almacen') }}" class="btn btn-success">Crear Almacén</a>
         </div>
+        {% endif %}
+
+        <!-- =========================
+        Filtro de búsqueda por nombre
+        ========================= -->
+
+        <form method="GET" action="{{ url_for('vista_almacenes') }}" class="mb-4 card p-3 shadow-sm">
+            <div class="row g-3 align-items-end">
+
+                <!-- Nombre -->
+                <div class="col-md-6">
+                    <label for="filtro_nombre" class="form-label">Nombre del Almacén</label>
+                    <input type="text" id="filtro_nombre" name="nombre" class="form-control"
+                        value="{{ request.args.get('nombre', '') }}">
+                </div>
+
+                <!-- Botones -->
+                <div class="col-md-6 d-flex gap-2 mt-4">
+                    <button type="submit" class="btn btn-primary">Filtrar</button>
+                    <a href="{{ url_for('vista_almacenes') }}" class="btn btn-secondary">Limpiar</a>
+                </div>
+            </div>
+        </form>
 
         <!-- Contenedor de registros -->
         <div class="row">
@@ -59,7 +83,11 @@
                         <!-- Nombre del almacén -->
                         <h5 class="card-title">{{ almacen[1] }}</h5>
 
+                        <p class="card-text text-muted small">
+                            Última actividad: {{ almacen[3] if almacen[3] else 'Sin actividad' }}
+                        </p>
                         <!-- Botones Modificar y Eliminar -->
+                        {% if cargo == 'ADMIN' or cargo == 'ALMACENES' %}
                         <div class="d-flex justify-content-between mt-3">
                             <!-- Modificar -->
                             <a href="{{ url_for('modificar_almacen', almacen_id=almacen[0]) }}"
@@ -71,6 +99,7 @@
                                 <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
                             </form>
                         </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>

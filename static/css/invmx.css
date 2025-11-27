@@ -4,19 +4,18 @@
 
 :root {
     --azul-unison: #00529e;
-    /* Azul principal */
+    /* Azul Unison principal */
     --azul-oscuro-unison: #015294;
-    /* Azul más oscuro */
+    /* Azul Oscuro Unison */
     --dorado-unison: #f8bb00;
-    /* Dorado brillante para acentos */
+    /* Dorado Unison brillante */
     --dorado-oscuro-unison: #d99e30;
-    /* Dorado oscuro para hover */
+    /* Dorado Oscuro Unison */
     --texto-claro: #ffffff;
-    /* Texto claro */
-    --fondo-claro: #f4f4f4;
-    /* Fondo gris claro */
+    /* Texto claro blanco */
+    --fondo-claro: #f8bb00;
+    /* Fondo dorado oficial para todas las pantallas */
 }
-
 
 /*===========================================*/
 /* Configuración general                    */
@@ -24,14 +23,13 @@
 
 /* Fondo global */
 body {
-    background-color: #f8bb00 !important;
-    /* Fondo dorado oficial, forzado */
+    background-color: var(--fondo-claro) !important;
+    /* Fondo dorado oficial */
     color: #000 !important;
     /* Texto negro para contraste */
     font-family: Arial, sans-serif;
     /* Fuente estándar */
 }
-
 
 /*===========================================*/
 /* Navbar                                   */
@@ -56,7 +54,6 @@ body {
     /* Hover dorado */
 }
 
-
 /*===========================================*/
 /* Botones                                  */
 /*===========================================*/
@@ -79,7 +76,7 @@ body {
 
 .btn-warning {
     background-color: var(--dorado-unison);
-    /* Botón amarillo */
+    /* Botón dorado */
     border-color: var(--dorado-oscuro-unison);
     /* Borde dorado oscuro */
     color: #000;
@@ -92,7 +89,6 @@ body {
     border-color: var(--azul-unison);
     /* Borde azul */
 }
-
 
 /*===========================================*/
 /* Tablas                                   */
@@ -109,7 +105,6 @@ body {
     background-color: #e6e6e6;
     /* Hover gris claro */
 }
-
 
 /*===========================================*/
 /* Tarjetas (cards)                         */
@@ -128,7 +123,6 @@ body {
     color: var(--texto-claro);
     /* Texto blanco */
 }
-
 
 /*===========================================*/
 /* Formularios                              */
@@ -152,7 +146,6 @@ textarea:focus {
     /* Quitar borde default */
 }
 
-
 /*===========================================*/
 /* Footer                                   */
 /*===========================================*/
@@ -166,4 +159,57 @@ footer {
     /* Espaciado */
     text-align: center;
     /* Texto centrado */
+}
+
+/*===========================================*/
+/* Estilos Login - InventarioMX              */
+/*===========================================*/
+
+/* Contenedor principal del login */
+body.login-body {
+    background-color: var(--dorado-unison);
+    /* Fondo dorado oficial */
+    color: #000;
+    /* Texto negro para contraste */
+}
+
+/* Card del formulario */
+body.login-body .card {
+    border: 2px solid var(--azul-unison);
+    /* Borde azul Unison */
+    border-radius: 10px;
+    background-color: #ffffff;
+    /* Fondo blanco para resaltar la card */
+    padding: 2rem;
+}
+
+/* Títulos y labels */
+body.login-body h1,
+body.login-body label {
+    color: var(--azul-oscuro-unison);
+    /* Texto azul oscuro */
+}
+
+/* Inputs de formulario */
+body.login-body input {
+    border: 1px solid var(--azul-unison);
+    border-radius: 5px;
+}
+
+body.login-body input:focus {
+    border-color: var(--dorado-unison);
+    outline: none;
+}
+
+/* Botón de login */
+body.login-body .btn-success {
+    background-color: var(--azul-unison);
+    border-color: var(--azul-oscuro-unison);
+    color: var(--texto-claro);
+}
+
+body.login-body .btn-success:hover {
+    background-color: var(--azul-oscuro-unison);
+    border-color: var(--dorado-unison);
+    color: var(--texto-claro);
 }
