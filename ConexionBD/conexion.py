@@ -9,14 +9,14 @@ def get_connection():
     Retorna una conexión a la base de datos InventarioBD_2.db
     """
     try:
-        # Intentamos abrir la conexión con la base de datos
+        # Se abre la conexión con la base de datos
         conn = sqlite3.connect(DB_PATH)
         # Configuramos que las filas se puedan acceder como diccionarios
         conn.row_factory = sqlite3.Row
         # Retornamos la conexión lista para usar
         return conn
     except sqlite3.Error as e:
-        # Si ocurre un error al abrir la conexión, lo imprimimos
+        # Si ocurre un error al abrir la conexión, se imprime
         print(f"Error al conectar a la BD: {e}")
         # Retornamos None para indicar que no se pudo conectar
         return None

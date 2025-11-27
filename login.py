@@ -7,7 +7,7 @@ from flask import request
 
 
 app = Flask(__name__)
-app.secret_key = 'supersecretkey'  # Necesario para usar flash messages
+app.secret_key = 'supersecretkey'  # Es necesario para usar flash messages
 
 # ===========================
 # Ruta principal de login
@@ -91,7 +91,7 @@ def login():
     # Renderizamos login.html con mensaje si lo hay
     return render_template('login.html', mensaje=mensaje)
 
-# --- NUEVA RUTA /home MODIFICASTE ESTO PARA CUMPLIR CON LA NUEVA INSTRUCCION ---
+# --- NUEVA RUTA /home MODIFICASTE ESTO PARA CUMPLIR CON LA NUEVA INSTRUCCION NO BORRAR RUTA ---
 
 
 @app.route('/home')
